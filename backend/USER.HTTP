@@ -1,0 +1,180 @@
+### Register - admin
+POST http://localhost:5000/api/auth/register HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Divyanshu",
+    "email": "sv090999@gmail.com",
+    "password": "test@123",
+    "profileImageUrl": "",
+    "adminInviteToken": "267381"
+}
+
+### Register - member
+POST http://localhost:5000/api/auth/register HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "aman",
+    "email": "aman@gmail.com",
+    "password": "aman@123",
+    "profileImageUrl": "http://localhost:5000/upload/1749811327365-image.png"
+}
+
+### Login - admin
+POST http://localhost:5000/api/auth/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "sv090999@gmail.com",
+    "password": "test@123"
+}
+
+### Login - member
+POST http://localhost:5000/api/auth/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "aman@gmail.com",
+    "password": "aman@123"
+}
+
+### Get Profile
+GET http://localhost:5000/api/auth/profile HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGJlMTg0ZTdlMzk4ZTkwNjYwNTU1MyIsImlhdCI6MTc0OTgwNDM5NSwiZXhwIjoxNzUwNDA5MTk1fQ.Qv2pTKsQbPz-RYrCk3mObpLZ5cTQNjUozTptk4DBFCY
+
+### Upload image
+POST http://localhost:5000/api/auth/upload-image HTTP/1.1
+Content-Type: multipart/form-data; boundary=MyBoundary
+
+--MyBoundary
+Content-Disposition: form-data; name="image"; filename="image.png"
+Content-Type: image/jpeg
+
+< ./assets/one.png
+--MyBoundary--
+
+### Get all users
+GET http://localhost:5000/api/users HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGJlMTg0ZTdlMzk4ZTkwNjYwNTU1MyIsImlhdCI6MTc0OTgxMTA5MiwiZXhwIjoxNzUwNDE1ODkyfQ.-1g_ynGPnOWiw-59t8GlVCiDTwxFe8vdCr2i9Pg6jjg
+
+### Get user by id
+GET http://localhost:5000/api/users/684c00b584a309c0e11d40a5 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGJlMTg0ZTdlMzk4ZTkwNjYwNTU1MyIsImlhdCI6MTc0OTgxMTA5MiwiZXhwIjoxNzUwNDE1ODkyfQ.-1g_ynGPnOWiw-59t8GlVCiDTwxFe8vdCr2i9Pg6jjg
+
+### Delete user by id
+DELETE  http://localhost:5000/api/users/684c00b584a309c0e11d40a5 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGJlMTg0ZTdlMzk4ZTkwNjYwNTU1MyIsImlhdCI6MTc0OTgxMTA5MiwiZXhwIjoxNzUwNDE1ODkyfQ.-1g_ynGPnOWiw-59t8GlVCiDTwxFe8vdCr2i9Pg6jjg
+
+### Create task - admin
+POST http://localhost:5000/api/tasks HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGJlMTg0ZTdlMzk4ZTkwNjYwNTU1MyIsImlhdCI6MTc0OTgzODg1MiwiZXhwIjoxNzUwNDQzNjUyfQ.SUyTBrtfiRCufsp7morjFL56SchDS61XViPLMRphlbI
+
+{
+  "title": "Improve Website Performance - 2",
+  "description": "Optimize the website for faster load times and improved performance. Focus on image optimization, code splitting, and caching strategies.",
+  "priority": "High",
+  "dueDate": "February 1, 2025",
+  "assignedTo": ["684c0227764d56d195f025ec"],
+  "todoChecklist": [
+    {
+      "text": "Implement lazy loading for images",
+      "completed": "false"
+    },
+    {
+      "text": "Minimize CSS and JS file sizes",
+      "completed": "false"
+    },
+    {
+      "text": "Optimize API response time",
+      "completed": "false"
+    }
+  ]
+}
+
+### Get all tasks - admin
+GET http://localhost:5000/api/tasks HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGJlMTg0ZTdlMzk4ZTkwNjYwNTU1MyIsImlhdCI6MTc0OTgzODg1MiwiZXhwIjoxNzUwNDQzNjUyfQ.SUyTBrtfiRCufsp7morjFL56SchDS61XViPLMRphlbI
+
+### Get task by id - admin
+GET http://localhost:5000/api/tasks/684d02c58d1a309d706cdc59 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGJlMTg0ZTdlMzk4ZTkwNjYwNTU1MyIsImlhdCI6MTc0OTgzODg1MiwiZXhwIjoxNzUwNDQzNjUyfQ.SUyTBrtfiRCufsp7morjFL56SchDS61XViPLMRphlbI
+
+### Update task - admin
+PUT http://localhost:5000/api/tasks/684d02c58d1a309d706cdc59 HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGJlMTg0ZTdlMzk4ZTkwNjYwNTU1MyIsImlhdCI6MTc0OTgzODg1MiwiZXhwIjoxNzUwNDQzNjUyfQ.SUyTBrtfiRCufsp7morjFL56SchDS61XViPLMRphlbI
+
+{
+  "title": "Improve Website Performance by 50%",
+  "description": "Optimize the website for faster load times and improved performance. Focus on image optimization, code splitting, and caching strategies.",
+  "priority": "High",
+  "dueDate": "February 1, 2025",
+  "assignedTo": ["684c0227764d56d195f025ec"],
+  "todoChecklist": [
+    {
+      "text": "Implement lazy loading for images",
+      "completed": "false"
+    },
+    {
+      "text": "Minimize CSS and JS file sizes",
+      "completed": "false"
+    },
+    {
+      "text": "Optimize API response time",
+      "completed": "false"
+    },
+    {
+      "text": "Test for bugs",
+      "completed": "false"
+    }
+  ]
+}
+
+### Delete task - admin
+DELETE http://localhost:5000/api/tasks/684d02c58d1a309d706cdc59 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGJlMTg0ZTdlMzk4ZTkwNjYwNTU1MyIsImlhdCI6MTc0OTgzODg1MiwiZXhwIjoxNzUwNDQzNjUyfQ.SUyTBrtfiRCufsp7morjFL56SchDS61XViPLMRphlbI
+
+### Update task - admin and assigned member
+PUT http://localhost:5000/api/tasks/684d0a5735d0b021a114e46e/status HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGJlMTg0ZTdlMzk4ZTkwNjYwNTU1MyIsImlhdCI6MTc0OTgzODg1MiwiZXhwIjoxNzUwNDQzNjUyfQ.SUyTBrtfiRCufsp7morjFL56SchDS61XViPLMRphlbI
+
+{
+  "status" : "In Progress"
+}
+
+### Update task checklist - admin
+PUT http://localhost:5000/api/tasks/684d0a5735d0b021a114e46e/todo HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGJlMTg0ZTdlMzk4ZTkwNjYwNTU1MyIsImlhdCI6MTc0OTgzODg1MiwiZXhwIjoxNzUwNDQzNjUyfQ.SUyTBrtfiRCufsp7morjFL56SchDS61XViPLMRphlbI
+
+{
+  "todoChecklist": [
+    {
+      "text": "Implement lazy loading for images",
+      "completed": "true"
+    },
+    {
+      "text": "Minimize CSS and JS file sizes",
+      "completed": "true"
+    },
+    {
+      "text": "Optimize API response time",
+      "completed": "true"
+    },
+    {
+      "text": "Test for bugs",
+      "completed": "false"
+    }
+  ]
+}
+
+### Get Dash board data - admin
+GET http://localhost:5000/api/tasks/dashboard-data HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGJlMTg0ZTdlMzk4ZTkwNjYwNTU1MyIsImlhdCI6MTc0OTgzODg1MiwiZXhwIjoxNzUwNDQzNjUyfQ.SUyTBrtfiRCufsp7morjFL56SchDS61XViPLMRphlbI
+
+### Get dashboard data - member
+GET http://localhost:5000/api/tasks/dashboard-data HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGMwMjI3NzY0ZDU2ZDE5NWYwMjVlYyIsImlhdCI6MTc0OTg4NDEwMywiZXhwIjoxNzUwNDg4OTAzfQ.wsZDVC1JOwvZGD3McAGs_F-HcleAMyU1a9Z9l3M2hiI
