@@ -32,6 +32,7 @@ Thumbs.db
 
 # Coverage directory used by testing tools
 coverage/
+USER.HTTP
 
 # Optional npm cache directory
 .npm/
