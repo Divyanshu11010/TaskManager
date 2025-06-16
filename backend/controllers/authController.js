@@ -22,8 +22,6 @@ const registerUser = async (req, res) => {
             return res.status(400).json({ message: "User already exists" });
         }
 
-        console.log(typeof (adminInviteToken), typeof (process.env.ADMIN_INVITE_TOKEN))
-
         // Determine user role: Admin if correct token is provided, otherwise Member
         let role = "member";
         if (
