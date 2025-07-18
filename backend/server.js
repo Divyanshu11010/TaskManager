@@ -13,15 +13,15 @@ import userRoutes from "./routes/userRoutes.js";
 import taskRoutes from "./routes/taskRoutes.js";
 import reportRoutes from "./routes/reportRoutes.js";
 
+const app = express();
+
 configDotenv();
 const allowedOrigins = [process.env.CLIENT_URL];
-
-const app = express();
 
 app.use(
     cors({
         origin: function(origin, callback){
-            if(allowedOrigins.includes(origin)) callback(null, true);
+            if(!origin || allowedOrigins.includes(origin)) callback(null, true);
             else callback(new Error("Not allowed by CORS"))
         },
         methods: ["GET", "POST", 'PUT', "DELETE"],
@@ -29,6 +29,7 @@ app.use(
         credentials: true
     })
 );
+app.options("*", cors());
 
 app.use(express.json());
 
