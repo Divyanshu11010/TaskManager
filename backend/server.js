@@ -14,13 +14,19 @@ import taskRoutes from "./routes/taskRoutes.js";
 import reportRoutes from "./routes/reportRoutes.js";
 
 configDotenv();
+const allowedOrigins = [process.env.CLIENT_URL];
+
 const app = express();
 
 app.use(
     cors({
-        origin: process.env.CLIENT_URL || "*",
+        origin: function(origin, callback){
+            if(allowedOrigins.includes(origin)) callback(null, true);
+            else callback(new Error("Not allowed by CORS"))
+        },
         methods: ["GET", "POST", 'PUT', "DELETE"],
         allowedHeaders: ["Content-Type", "Authorization"],
+        credentials: true
     })
 );
 
