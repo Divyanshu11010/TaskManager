@@ -6,19 +6,34 @@
 
 <h2>🚀 Demo</h2>
 
-[https://task-manager-45y6.vercel.app/](https://task-manager-45y6.vercel.app/)
+- [https://task-manager-45y6.vercel.app/](https://task-manager-45y6.vercel.app/)
+- Demo Account Login :
+  - Admin : Email = admin@taskflow.dev, Password = Admin@123
+  - User : Email = user2@taskflow.dev, Password = User2@123
 
 <h2>Project Screenshots:</h2>
 
-<img src="https://github.com/Divyanshu11010/TaskManager/blob/main/client/TaskManager/snapshots/auth.png?raw=true" alt="project-screenshot" width="1080" height="720/">
+<img src="https://github.com/Divyanshu11010/TaskManager/blob/main/client/TaskManager/snapshots/landing.png?raw=true" alt="project-screenshot" width="1080" height="720/">
 
-<img src="https://github.com/Divyanshu11010/TaskManager/blob/main/client/TaskManager/snapshots/dashboard_2.png?raw=true" alt="project-screenshot" width="1080" height="720/">
+<img src="https://github.com/Divyanshu11010/TaskManager/blob/main/client/TaskManager/snapshots/sign_up.png?raw=true" alt="project-screenshot" width="1080" height="720/">
 
-<img src="https://github.com/Divyanshu11010/TaskManager/blob/main/client/TaskManager/snapshots/members.png?raw=true" alt="project-screenshot" width="1080" height="720/">
+<img src="https://github.com/Divyanshu11010/TaskManager/blob/main/client/TaskManager/snapshots/admin_dashboard.png?raw=true" alt="project-screenshot" width="1080" height="720/">
 
-<img src="https://github.com/Divyanshu11010/TaskManager/blob/main/client/TaskManager/snapshots/tasks_admin.png?raw=true" alt="project-screenshot" width="1080" height="720/">
+<img src="https://github.com/Divyanshu11010/TaskManager/blob/main/client/TaskManager/snapshots/task_list.png?raw=true" alt="project-screenshot" width="1080" height="720/">
 
-<img src="https://github.com/Divyanshu11010/TaskManager/blob/main/client/TaskManager/snapshots/user_controls.png?raw=true" alt="project-screenshot" width="1080" height="720/">
+<img src="https://github.com/Divyanshu11010/TaskManager/blob/main/client/TaskManager/snapshots/admin_tasks.png?raw=true" alt="project-screenshot" width="1080" height="720/">
+
+<img src="https://github.com/Divyanshu11010/TaskManager/blob/main/client/TaskManager/snapshots/admin_update_task.png?raw=true" alt="project-screenshot" width="1080" height="720/">
+
+<img src="https://github.com/Divyanshu11010/TaskManager/blob/main/client/TaskManager/snapshots/team_members.png?raw=true" alt="project-screenshot" width="1080" height="720/">
+
+<img src="https://github.com/Divyanshu11010/TaskManager/blob/main/client/TaskManager/snapshots/user_dashboard.png?raw=true" alt="project-screenshot" width="1080" height="720/">
+
+<img src="https://github.com/Divyanshu11010/TaskManager/blob/main/client/TaskManager/snapshots/user_tasks.png?raw=true" alt="project-screenshot" width="1080" height="720/">
+
+<img src="https://github.com/Divyanshu11010/TaskManager/blob/main/client/TaskManager/snapshots/user_update_task.png?raw=true" alt="project-screenshot" width="1080" height="720/">
+
+<img src="https://github.com/Divyanshu11010/TaskManager/blob/main/client/TaskManager/snapshots/spreadsheet.png?raw=true" alt="project-screenshot" width="1080" height="720/">
 
   
   
