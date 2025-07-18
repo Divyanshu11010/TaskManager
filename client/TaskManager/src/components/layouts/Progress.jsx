@@ -3,14 +3,14 @@ import React from "react";
 const Progress = ({ progress, status }) => {
     const getColor = () => {
         switch (status) {
-            case 'In Progress':
-                return 'text-cyan-500 bg-cyan-500 border-cyan-500/10';
-
             case 'Completed':
-                return 'text-indigo-500 bg-indigo-500 border-indigo-500/10';
-
+                return 'bg-green-800/30 text-green-300 border border-green-700';
+            case 'Pending':
+                return 'bg-purple-800/30 text-purple-300 border border-purple-700';
+            case 'In Progress':
+                return 'bg-blue-800/30 text-blue-300 border border-blue-700';
             default:
-                return 'text-violet-500 bg-violet-500 border-violet-500/10';
+                return 'bg-gray-700/30 text-gray-300 border border-gray-600';
         }
     }
 

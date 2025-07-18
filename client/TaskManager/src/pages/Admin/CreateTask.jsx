@@ -216,7 +216,7 @@ const CreateTask = () => {
             </div>
 
             <div className="mt-4">
-              <label className="text-xs font-medium text-slate-600">
+              <label className="text-xs font-medium text-gray-300">
                 Task Title
               </label>
               <input
@@ -230,7 +230,7 @@ const CreateTask = () => {
             </div>
 
             <div className="mt-3">
-              <label className="text-xs font-medium text-slate-600">
+              <label className="text-xs font-medium text-gray-300">
                 Description
               </label>
               <textarea
@@ -245,7 +245,7 @@ const CreateTask = () => {
 
             <div className="grid grid-cols-12 gap-4 mt-2">
               <div className="col-span-6 md:col-span-4">
-                <label className="text-xs font-medium text-slate-600">
+                <label className="text-xs font-medium text-gray-300">
                   Priority
                 </label>
                 <SelectDropdowm
@@ -258,7 +258,7 @@ const CreateTask = () => {
             </div>
 
             <div className="col-span-6 md:col-span-4">
-              <label className="text-xs font-medium text-slate-600">
+              <label className="text-xs font-medium text-gray-300">
                 Due Date
               </label>
               <input
@@ -273,7 +273,7 @@ const CreateTask = () => {
             </div>
 
             <div className='col-span-12 md:col-span-3'>
-              <label className='text-xs font-medium text-slate-600'>
+              <label className='text-xs font-medium text-gray-300'>
                 Assign To
               </label>
 
@@ -286,7 +286,7 @@ const CreateTask = () => {
             </div>
 
             <div className="mt-3">
-              <label className="text-xs font-medium text-slate-600">
+              <label className="text-xs font-medium text-gray-300">
                 TODO Checklist
               </label>
               <TodoListInput
@@ -298,7 +298,7 @@ const CreateTask = () => {
             </div>
 
             <div className="mt-3">
-              <label className="text-xs font-medium text-slate-600">
+              <label className="text-xs font-medium text-gray-300">
                 Add Attachments
               </label>
               <AddAttachmentsInput

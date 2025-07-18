@@ -22,10 +22,10 @@ const AddAttachmentsInput = ({ attachments, setAttachments }) => {
     return (
         <div>
             {attachments.map((item, index) => (
-                <div key={item} className="flex justify-between bg-gray-50 border border-gray-100 px-3 py-2 rounded-md mb-3 mt-2">
-                    <div className="flex-1 flex items-center gap-3 border border-gray-100">
+                <div key={item} className="flex justify-between bg-slate-800 border border-gray-800 px-3 py-2 rounded-md mb-3 mt-2">
+                    <div className="flex-1 flex items-center gap-3">
                         <LuPaperclip className="text-gray-400" />
-                        <p className="text-xs text-black">{item}</p>
+                        <p className="text-xs text-gray-300">{item}</p>
                     </div>
 
                     <button
@@ -40,14 +40,14 @@ const AddAttachmentsInput = ({ attachments, setAttachments }) => {
             ))}
 
             <div className="flex items-center gap-5 mt-4">
-                <div className="flex-1 flex items-center gap-3 border border-gray-100 rounded-md px-3">
-                    <LuPaperclip className="text-gray-400" />
+                <div className="bg-slate-800 flex-1 flex items-center gap-3 border border-gray-700 rounded-md px-3">
+                    <LuPaperclip className="text-gray-300" />
                     <input
                         type="text"
                         placeholder="Add File Link"
                         value={option}
                         onChange={({ target }) => setOption(target.value)}
-                        className="w-full text-[13px] text-black outline-none bg-white py-2"
+                        className="w-full text-[13px] text-shadow-white placholder-gray-400 outline-none py-2"
                     />
                 </div>
                 <button className="card-btn text-nowrap" onClick={handleAddOption}>

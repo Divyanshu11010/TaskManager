@@ -50,12 +50,12 @@ const CustomBarChart = ({ data }) => {
   };
 
   return (
-    <div className="bg-white mt-6">
-      <ResponsiveContainer width="100%" height={300}>
+    <div className=" mt-6">
+      <ResponsiveContainer width="90%" height={256}>
         <BarChart data={data}>
           <CartesianGrid stroke="none" />
-          <XAxis dataKey="priority" tick={{ fontSize: 12, fill: "#555" }} stroke="none" />
-          <YAxis tick={{ fontSize: 12, fill: "#555" }} stroke="none" />
+          <XAxis dataKey="priority" tick={{ fontSize: 12, fill: "#D1D5DC" }} stroke="none" />
+          <YAxis tick={{ fontSize: 12, fill: "#D1D5DC" }} stroke="none" />
           <Tooltip content={CustomTooltip} cursor={{ fill: "transparent" }} />
           <Bar
             dataKey="count"

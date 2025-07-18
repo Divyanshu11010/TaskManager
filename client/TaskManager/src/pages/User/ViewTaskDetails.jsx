@@ -13,12 +13,14 @@ const ViewTaskDetails = () => {
 
   const getStatusTagColor = (status) => {
     switch (status) {
-      case "In Progress":
-        return "text-cyan-500 bg-cyan-50 border border-cyan-500/10";
-      case "Completed":
-        return "text-lime-500 bg-lime-50 border border-lime-500/20";
+      case 'Completed':
+        return 'bg-green-800/30 text-green-300 border border-green-700';
+      case 'Pending':
+        return 'bg-purple-800/30 text-purple-300 border border-purple-700';
+      case 'In Progress':
+        return 'bg-blue-800/30 text-blue-300 border border-blue-700';
       default:
-        return "text-violet-500 bg-violet-50 border border-violet-500/10";
+        return 'bg-gray-700/30 text-gray-300 border border-gray-600';
     }
   };
 
@@ -76,7 +78,7 @@ const ViewTaskDetails = () => {
         <div className="mt-6 grid grid-cols-1 md:grid-cols-4 gap-6">
           <div className="form-card col-span-3">
             <div className="flex items-center justify-between mb-4">
-              <h2 className="text-lg md:text-xl font-semibold text-gray-800">
+              <h2 className="text-lg md:text-xl font-semibold text-shadow-white">
                 {task?.title}
               </h2>
               <div
@@ -107,7 +109,7 @@ const ViewTaskDetails = () => {
                 />
               </div>
               <div className="col-span-12 md:col-span-4">
-                <label className="text-xs font-medium text-slate-500 block mb-1">
+                <label className="text-xs font-medium text-gray-300 block mb-1">
                   Assigned To
                 </label>
                 <AvatarGroup
@@ -120,7 +122,7 @@ const ViewTaskDetails = () => {
             </div>
 
             <div className="mb-6">
-              <label className="text-xs font-medium text-slate-500 block mb-2">
+              <label className="text-xs font-medium text-gray-300 block mb-2">
                 Todo Checklist
               </label>
               <div className="space-y-2">
@@ -137,7 +139,7 @@ const ViewTaskDetails = () => {
 
             {task?.attachments?.length > 0 && (
               <div className="mb-6">
-                <label className="text-xs font-medium text-slate-500 block mb-2">
+                <label className="text-xs font-medium text-gray-300 block mb-2">
                   Attachments
                 </label>
                 <div className="space-y-2">
@@ -165,20 +167,19 @@ export default ViewTaskDetails;
 
 const InfoBox = ({ label, value }) => (
   <div>
-    <label className="text-xs font-medium text-slate-500 block">{label}</label>
-    <p className="text-sm font-medium text-gray-800 mt-1">{value}</p>
+    <label className="text-xs font-medium text-gray-300 block">{label}</label>
+    <p className="text-sm font-medium text-gray-400 mt-1">{value}</p>
   </div>
 );
 
 const TodoCheckList = ({ text, isChecked, onChange }) => (
-  <div className="flex items-center gap-3 px-3 py-2 bg-white border border-gray-200 rounded-md">
+  <div className="flex items-center gap-3 px-3 py-2 bg-slate-800 hover:bg-gray-700 border border-gray-800 rounded-md">
     <input
       type="checkbox"
       checked={isChecked}
       onChange={onChange}
-      className="w-4 h-4 text-primary rounded border-gray-300 focus:ring-primary cursor-pointer"
     />
-    <p className={`text-sm text-gray-800 ${isChecked ? "line-through opacity-60" : ""}`}>
+    <p className={`text-sm text-gray-400 ${isChecked ? "line-through opacity-40" : ""}`}>
       {text}
     </p>
   </div>
@@ -186,14 +187,14 @@ const TodoCheckList = ({ text, isChecked, onChange }) => (
 
 const Attachment = ({ link, index, onClick }) => (
   <div
-    className="flex justify-between items-center bg-gray-50 border border-gray-200 px-3 py-2 rounded-md cursor-pointer hover:bg-gray-100 transition"
+    className="flex justify-between items-center bg-slate-800 border border-gray-800 px-3 py-2 rounded-md cursor-pointer hover:bg-gray-700 transition"
     onClick={onClick}
   >
     <div className="flex items-center gap-2 overflow-hidden">
       <span className="text-xs font-semibold text-gray-400 shrink-0">
         {index < 9 ? `0${index + 1}` : index + 1}
       </span>
-      <p className="text-sm text-gray-700 truncate">{link}</p>
+      <p className="text-sm text-gray-400 truncate">{link}</p>
     </div>
     <LuSquareArrowOutUpRight className="text-gray-400 shrink-0" size={16} />
   </div>

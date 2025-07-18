@@ -8,7 +8,7 @@ function AuthLayout({ children }) {
       <div className='w-screen h-screen md:w-[50vw] px-12 pt-9 pb-12'>
         <div className="flex gap-2 items-center">
           <img src={Logo2} alt="logo" className='w-[70px] h-[50px]'/>
-          <h2 className='text-2xl font-bold font font- text-black'>Task Manager</h2>
+          <h2 className='text-2xl font-bold font text-shadow-white'>Task Manager</h2>
         </div>
         {children}
       </div>

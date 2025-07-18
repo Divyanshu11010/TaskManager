@@ -8,7 +8,7 @@ import moment from 'moment'
 import { addThousandsSeparator } from '../../utils/helper'
 import InfoCard from '../../components/cards/InfoCard';
 import { LuArrowRight } from 'react-icons/lu';
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import TasksListTable from '../../components/TasksListTable'
 import CustomPieChart from '../../components/charts/CustomPieChart'
 import CustomBarChart from '../../components/charts/CustomBarChart'
@@ -22,6 +22,7 @@ function Dashboard() {
   const [dashboardData, setDashboardData] = useState(null);
   const [pieChartData, setPieChartData] = useState([]);
   const [barChartData, setBarChartData] = useState([]);
+  const navigate = useNavigate();
 
   // Prepare Chart Data
   const prepareChartData = (data) => {
@@ -60,15 +61,11 @@ function Dashboard() {
   };
 
   const onSeeMore = () => {
-    Navigate("/admin/tasks");
+    navigate("/admin/tasks");
   }
 
   useEffect(() => {
     getDashboardData();
-
-    return () => {
-
-    }
   }, [])
 
   return (
@@ -76,8 +73,8 @@ function Dashboard() {
       <div className="card my-5">
         <div>
           <div className="col-span-3">
-            <h2 className="text-xl md:text-2xl">Good Morning! {user?.name}</h2>
-            <p className="text-xs md:text-[13px] text-gray-400 mt-1.5">
+            <h2 className="text-xl md:text-2xl text-shadow-white">Good Morning! {user?.name}</h2>
+            <p className="text-xs md:text-[13px] text-gray-300 mt-1.5">
               {moment().format('dddd Do MMM YYYY')}
             </p>
           </div>
@@ -122,7 +119,7 @@ function Dashboard() {
 
         <div className="card">
           <div className="flex items-center justify-between">
-            <h5 className="font-medium">Task Distribution</h5>
+            <h5 className="font-medium text-shadow-white">Task Distribution</h5>
           </div>
           <CustomPieChart
             data={pieChartData}
@@ -131,7 +128,7 @@ function Dashboard() {
         </div>
         <div className="card">
           <div className="flex items-center justify-between">
-            <h5 className="font-medium">Task Priority Levels</h5>
+            <h5 className="font-medium text-shadow-white">Task Priority Levels</h5>
           </div>
           <CustomBarChart
             data={barChartData}
@@ -142,7 +139,7 @@ function Dashboard() {
         <div className="md:col-span-2">
           <div className="card">
             <div className="flex items-center justify-between">
-              <h5 className="text-lg">Recent Tasks</h5>
+              <h5 className="text-lg text-shadow-white">Recent Tasks</h5>
               <button className="card-btn" onClick={onSeeMore}>
                 See All <LuArrowRight className="text-base" />
               </button>

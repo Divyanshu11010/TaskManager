@@ -61,11 +61,11 @@ function ManageTasks() {
       <div className="my-5">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between">
           <div className="flex items-center justify-between gap-3">
-            <h2 className="text-xl font-medium">My Tasks</h2>
+            <h2 className="text-lg lg:text-xl font-medium text-shadow-white">My Tasks</h2>
             <button className="flex lg:hidden download-btn"
               onClick={handleDownloadReport}
             >
-              <LuFileSpreadsheet className='text-lg' />
+              <LuFileSpreadsheet className='text-sm lg:text-lg' />
               Download Report
             </button>
           </div>

@@ -8,9 +8,9 @@ const Navbar = ({ activeMenu }) => {
   return (
     <>
       {/* Top Navbar */}
-      <div className="flex items-center gap-5 bg-white border-b border-gray-200/50 backdrop-blur-[2px] py-4 px-7 sticky top-0">
+      <div className="flex items-center gap-5 border-b border-gray-200/50 backdrop-blur-[10px] py-4 px-7 sticky top-0 z-50">
         <button
-          className="block lg:hidden text-black"
+          className="block lg:hidden text-shadow-white"
           onClick={() => setOpenSideMenu(!openSideMenu)}
         >
           {openSideMenu ? (
@@ -20,12 +20,12 @@ const Navbar = ({ activeMenu }) => {
           )}
         </button>
 
-        <h2 className="text-lg font-medium text-black">Task Manager</h2>
+        <h2 className="text-lg font-medium text-shadow-white">Task Manager</h2>
       </div>
 
       {/* Mobile Side Menu */}
       {openSideMenu && (
-        <div className="fixed top-[61px] left-0 w-[250px] h-full bg-white shadow-lg z-40 transition-transform duration-300 ease-in-out lg:hidden">
+        <div className="fixed top-[61px] left-0 w-[250px] h-full bg-[#020618] shadow-lg z-40 transition-transform duration-300 ease-in-out lg:hidden">
           <SideMenu activeMenu={activeMenu} />
         </div>
       )}
