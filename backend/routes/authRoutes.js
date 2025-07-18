@@ -3,6 +3,7 @@ import { getUserProfile, loginUser, registerUser, updateUserProfile } from '../c
 
 import { protect } from "../middlewares/authMiddleware.js";
 import upload from "../middlewares/uploadMiddleware.js";
+import { BASE_URL } from '../../client/TaskManager/src/utils/apiPaths.js';
 
 const router = express.Router();
 
@@ -17,7 +18,7 @@ router.post("/upload-image", upload.single("image"), (req, res) => {
         return res.status(400).json({ message: "No file uploaded" });
     }
 
-    const imageUrl = `${req.protocol}://${req.get("host")}/uploads/${req.file.filename}`;
+    const imageUrl = `${BASE_URL}/uploads/${req.file.filename}`;
     res.status(200).json({ imageUrl });
 });
 
