@@ -18,18 +18,24 @@ const app = express();
 configDotenv();
 const allowedOrigins = [process.env.CLIENT_URL];
 
-app.use(
-    cors({
-        origin: function(origin, callback){
-            if(!origin || allowedOrigins.includes(origin)) callback(null, true);
-            else callback(new Error("Not allowed by CORS"))
-        },
-        methods: ["GET", "POST", 'PUT', "DELETE"],
-        allowedHeaders: ["Content-Type", "Authorization"],
-        credentials: true
-    })
-);
-app.options("*", cors());
+// Log incoming origin
+app.use((req, res, next) => {
+    console.log("Incoming origin:", req.headers.origin);
+    next();
+});
+
+const corsOptions = {
+    origin: function (origin, callback) {
+        if (!origin || allowedOrigins.includes(origin)) callback(null, true);
+        else callback(new Error("Not allowed by CORS"))
+    },
+    methods: ["GET", "POST", 'PUT', "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true
+}
+
+app.use(cors(corsOptions));
+app.options("/upload-image", cors(corsOptions));
 
 app.use(express.json());
 
