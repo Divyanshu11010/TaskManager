@@ -18,12 +18,6 @@ const app = express();
 configDotenv();
 const allowedOrigins = [process.env.CLIENT_URL];
 
-// Log incoming origin
-app.use((req, res, next) => {
-    console.log("Incoming origin:", req.headers.origin);
-    next();
-});
-
 const corsOptions = {
     origin: function (origin, callback) {
         if (!origin || allowedOrigins.includes(origin)) callback(null, true);
