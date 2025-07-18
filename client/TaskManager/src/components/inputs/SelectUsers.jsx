@@ -70,18 +70,18 @@ const SelectUsers = ({ selectedUsers, setSelectedUsers }) => {
                 title="Select Users"
             >
                 <div className="space-y-4 h-[60vh] overflow-y-auto">
-                    {allUsers.slice(0, 3).map((user) => (
-                        <div key={user._id} className="flex items-center gap-4 p-3 border-b border-gray-200">
+                    {allUsers.slice(0, allUsers.length).map((user) => (
+                        <div key={user._id} className="flex items-center gap-4 p-3 border-b border-gray-800">
                             <img src={user.profileImageUrl} alt={user.name} className="w-10 h-10 rounded-full" />
                             <div className="flex-1">
-                                <p className="font-medium text-gray-800">{user.name}</p>
-                                <p className="text-[13px] text-gray-500">{user.email}</p>
+                                <p className="font-medium text-shadow-white">{user.name}</p>
+                                <p className="text-[13px] text-gray-300">{user.email}</p>
                             </div>
                             <input
                                 type="checkbox"
                                 checked={tempSelectedUsers.includes(user._id)}
                                 onChange={() => toggleUserSelection(user._id)}
-                                className="w-4 h-4 text-primary bg-gray-100 border-gray-300 rounded-sm outline-none"
+                                className="w-4 h-4 text-primary bg-slate-800 border-gray-800 rounded-sm outline-none"
                             />
                         </div>
                     ))}
@@ -91,7 +91,7 @@ const SelectUsers = ({ selectedUsers, setSelectedUsers }) => {
                     <button className="card-btn" onClick={() => setIsModalOpen(false)}>
                         CANCEL
                     </button>
-                    <button className="card-btn-fill" onClick={handleAssign}>
+                    <button className="card-btn" onClick={handleAssign}>
                         DONE
                     </button>
                 </div>
