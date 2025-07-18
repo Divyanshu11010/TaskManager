@@ -3,7 +3,11 @@ import { getUserProfile, loginUser, registerUser, updateUserProfile } from '../c
 
 import { protect } from "../middlewares/authMiddleware.js";
 import upload from "../middlewares/uploadMiddleware.js";
-import { BASE_URL } from '../../client/TaskManager/src/utils/apiPaths.js';
+
+import dotenv from 'dotenv'
+dotenv.config();
+
+const SERVER_BASE_URL = process.env.BASE_URL;
 
 const router = express.Router();
 
@@ -18,7 +22,7 @@ router.post("/upload-image", upload.single("image"), (req, res) => {
         return res.status(400).json({ message: "No file uploaded" });
     }
 
-    const imageUrl = `${BASE_URL}/uploads/${req.file.filename}`;
+    const imageUrl = `${SERVER_BASE_URL}/uploads/${req.file.filename}`;
     res.status(200).json({ imageUrl });
 });
 
