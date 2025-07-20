@@ -167,7 +167,6 @@ TaskManager/
 * 📬 Email Notifications on Task Assignment
 * 🗓️ Task Deadline Reminders
 * 📊 Advanced Analytics Dashboard
-* 📱 Mobile-Friendly UI Enhancements
 * 🧩 Multi-team Support for Organizations
 
 ---
