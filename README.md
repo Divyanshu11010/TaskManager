@@ -24,7 +24,7 @@
 
 🔗 **App URL:** [task-manager-45y6.vercel.app](https://task-manager-45y6.vercel.app/)
 
-🧪 **Demo Credentials:**
+🧪 **Demo Credentials:** Log in with these accounts to explore all features.
 
 | Role    | Email                | Password    |
 | ------- | -------------------- | ----------- |
